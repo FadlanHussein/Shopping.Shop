@@ -1,209 +1,47 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
+* {
   box-sizing: border-box;
 }
+body {
+  background-color: #f2f2f2;
+}
 .container {
-  width: 80%;
-  margin: auto;
+  background-color: #fff;
+  max-width: 600px;
+  margin: 100px auto;
   padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 h1 {
+  margin-top: 0;
   text-align: center;
-  color: #333;
 }
-h2 {
-  text-align: center;
-  color: #4caf50;
-  margin-top: 10px;
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px 0;
+  width: 100%;
 }
-.products {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-}
-.product {
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 5px;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.Add-To-Cart {
-  padding: 10px 10px;
-  background-color: #4caf50;
+button {
+  background-color: green;
   color: #fff;
+  padding: 10px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  font-size: 0.9rem;
+  margin: 10px 0;
+  width: 100%;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
 }
-.Add-To-Cart {
+
+button:hover {
   background-color: #45a049;
 }
-.cart {
-  border-top: 3px solid #cf2f2f;
-  padding-top: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 15px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-}
-.cart h2 {
-  color: #333;
-}
-#cart-items {
-  list-style: none;
-  padding: 0;
-}
-
-#cart-items li {
-  margin: 10px 0;
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#cart-items li {
-  background-color: #06b0ff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 0.8;
-}
-#Total {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  color: #333;
+#total {
+  font-size: 24px;
   font-weight: bold;
-}
-.h4 {
-  text-align: right;
-  border: none;
-  border-radius: 5px;
-}
-/* Layar Besar (Desktop) */
-@media (min-width: 1200px) {
-  .container {
-    padding: 40px;
-  }
-
-  .products {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-  }
-
-  .header h1 {
-    font-size: 3rem;
-  }
-}
-
-/* Layar Sedang (Tablet Landscape) */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .container {
-    padding: 30px;
-  }
-
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .header h1 {
-    font-size: 2.2rem;
-  }
-}
-
-/* Layar Kecil (Tablet Portrait & Mobile Landscape) */
-@media (min-width: 576px) and (max-width: 767px) {
-  .container {
-    padding: 20px;
-  }
-
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .product {
-    padding: 15px;
-  }
-
-  .header h1 {
-    font-size: 2rem;
-  }
-
-  .product h2 {
-    font-size: 1.3rem;
-  }
-}
-
-/* Layar Sangat Kecil (Mobile Portrait) */
-@media (max-width: 575px) {
-  .container {
-    padding: 15px;
-  }
-
-  .products {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .header h1 {
-    font-size: 1.8rem;
-  }
-
-  .header h4 {
-    font-size: 0.9rem;
-  }
-
-  .product {
-    padding: 15px;
-  }
-
-  .product h2 {
-    font-size: 1.2rem;
-  }
-
-  .product p {
-    font-size: 1rem;
-  }
-
-  .cart h1 {
-    font-size: 1.5rem;
-  }
-
-  #cart-items li {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  #total {
-    font-size: 1.3rem;
-    text-align: center;
-  }
-}
-
-/* Perbaikan untuk layar sangat kecil */
-@media (max-width: 375px) {
-  .container {
-    padding: 10px;
-  }
-
-  .header h1 {
-    font-size: 1.6rem;
-  }
-
-  .add-to-cart {
-    padding: 10px 15px;
-    font-size: 0.9rem;
-  }
+  /* margin-top: 10px; */
+  margin-block-start: 10px;
 }

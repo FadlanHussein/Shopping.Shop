@@ -1,34 +1,29 @@
-const  addToCartButtons= document.querySelectorAll(".Add-To-Cart")
-const cartItems=document.getElementById("cart-items")
-const totalElement=document.getElementById("Total")
+const btn = document.getElementById("calculate");
+const billInput = document.getElementById("bill");
+const tipInput = document.getElementById("tip");
+const total = document.getElementById("total");
 
-let cart=[]
-let total=0;
-console.log(addToCartButtons)
-addToCartButtons.forEach(button=>{
-     console.log(button)
-    button.addEventListener("click",()=>{
-        const productName=button.getAttribute("data-name")
-        const productPrice=parseInt(button.getAttribute("data-price"))
-        cart.push({name:productName,price:productPrice})
-        total +=productPrice
-        renderCart()
-    })
-})
-
-function removeFromCart(index){
-    total -= cart[index].price
-    cart.splice(index,1)
-
-    renderCart()
+function calculateTotal() {
+    // 1. Ambil nilai input dan konversi ke number
+    const billValue = parseFloat(billInput.value);
+    const tipValue = parseFloat(tipInput.value);
+    
+    // 2. VALIDASI INPUT (tempat yang tepat)
+    if (isNaN(billValue) || isNaN(tipValue)) {
+        total.innerText = "Mohon masukkan angka yang valid";
+        return; // Hentikan fungsi jika input tidak valid
+    }
+    
+    if (billValue <= 0) {
+        total.innerText = "Nilai tagihan harus lebih dari 0";
+        return;
+    }
+    
+    // 3. Jika input valid, lanjut perhitungan
+    const totalValue = billValue * (1 + tipValue / 100);
+    
+    // 4. Format ke Rupiah
+    total.innerText = "Rp" + totalValue.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-function renderCart(){
-    cartItems.innerHTML = ""
-cart.forEach((item,index)=>{
-    const li = document.createElement("li")
-    li.innerHTML =`${item.name} $${item.price.toFixed(0)} <button onclick="removeFromCart(${index})">Remove</button>`
-    cartItems.appendChild(li)
-})
-totalElement.innerText=`Total: $${total.toFixed(0)}`
-}
+btn.addEventListener("click", calculateTotal);
